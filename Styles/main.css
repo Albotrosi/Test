@@ -1,88 +1,88 @@
-.container {
-	flex-wrap:wrap;
+.container-1{
+	display:grid;
+	grid-template-columns: 100px 50px 50px 50px 50px;
+	grid-template-rows:50px 50px 50px 50px 50px;
+	grid-template-areas:
+	"bylka-smacom-2.		bylka-smacom-1"
+	"bylka-smacom-3	bylka-smacom-4	bylka-smacom-5";
+	gap:250px;
 }
-.container > div {
-	border: 1px solid #000000;
-	box-sizing: border-box;
-	width: 160px;
-	height: 40px;
+.test-7{
+	box-sizing:content-box;
+	width:1300px;
+	padding:1em;
+	background-color:#ff8c00;
+	height:50px;
 }
-.box-1 {
-	transform: translate(400px,-300px);
+.test-8{
+	box-sizing:content-box;
+	width:600px;
+	padding:1em;
+	transform: translate(300px,10px);
+	background-color:#e6e6fa;
 }
-.box-1 > div {
-	border: 1px solid #000000;
-	box-sizing: border-box;
-	width: 600px;
-	height: 100px;
+.test-9{
+	box-sizing:content-box;
+	width:100px;
+	padding:1em;
+	background-color:#ff8c00;
+	transform: translate(800px,-40px);
 }
-.img {
-	max-width: 20%;
+.test-1 {
+	grid-area: bylka-smacom-1;
 }
-.text {
-	width: 230px;
-    padding: 10px;
-	world-wrap:break-word;
-	transform: translate(200px,-90px);
+.test-2 {
+	grid-area: bylka-smacom-2;
 }
-.box-2 {
-	border: 1px solid #000000;
-	background: #FFA500;
-	width: auto;
-	height: 100px;
-	display:flex;
+.test-3{
+	grid-area: bylka-smacom-3;
 }
-.box-2 > div {
-	border: 1px solid #ffffff;
-	background: #ffffff;
-	box-sizing: border-box;
-	width: 550px;
-	height:30px;
-	transform: translate(400px,20px);
+.test-4	{
+	grid-area: bylka-smacom-4;
 }
-.text-2 {
-	transform: translate(1000px,50px);
-	border: 1px solid #ffffff;
-	width: 100px;
-	height:30px;
-	color: #ffffff
+.test-5 {
+	grid-area: bylka-smacom-5;
 }
-.text-3 {
-	color: #ffffff;
-	border: 1px solid #ffffff;
-	width: 100px;
-	height:30px;
-	background: #FFA500;
-	box-sizing: border-box;
-	world-wrap:break-word;
-	transform: translate(400px,-140px);
+.container-2{
+	display:grid;
+	grid-template-columns: 100px 50px 50px 50px 50px;
+	grid-template-rows:50px 50px 50px 50px 50px;
+	grid-template-areas:
+	"bylka-smacom-6	bylka-smacom-10	bylka-smacom-11	bylka-smacom-12";
+	gap:250px;
+	transform: translate(0,-600px);
 }
-.text-4 {
-	transform: translate(400px,200px);
+.test-6 {
+	grid-area: bylka-smacom-6;
 }
-.text-5 {
-	width: 50px;
-	border: 1px solid #FFA500;
-	transform: translate(400px,270px);
+.test-10 {
+	grid-area: bylka-smacom-10;
+}.test-11 {
+	grid-area: bylka-smacom-11;
+}.test-12 {
+	grid-area: bylka-smacom-12;
 }
-.text-6 {
-	transform: translate(500px,250px);
-	border: 1px solid #FFA500;
-	width: 40px;
-	color: #ffffff;
-	background: #FFA500;
+.text-1	{
+	transform: translate(500px,-700px);
 }
-.box-3 {
-	height:40px;
-	width: 70px;
-	border: 1px solid #FFA500;
-	transform: translate(800px,340px);
+.text-2	{
+	transform: translate(250px,150px);
 }
-.box-4 {
-	transform: translate(900px,300px);
-	border: 1px solid #FFA500;
-	width: 70px;
-	height:40px;
-	color: #ffffff;
-	background: #FFA500;
+.text-3	{
+	transform: translate(350px,130px);
+}
+.text-4	{
+	transform: translate(450px,110px);
+}
+.text-5	{
+	transform: translate(550px,95px);
+}
+.text-6	{
+	transform: translate(650px,75px);
+}
+.text-7	{
+	transform: translate(800px,60px);
+}
+.text-8	{
+	transform: translate(900px,45px);
 }
