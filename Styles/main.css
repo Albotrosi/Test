@@ -7,6 +7,7 @@
 	"bylka-smacom-3	bylka-smacom-4	bylka-smacom-5";
 	gap:250px;
 	transform: translate(200px,0);
+	margin: 5% auto;
 }
 .test-7{
 	box-sizing:content-box;
@@ -52,6 +53,7 @@
 	"bylka-smacom-6	bylka-smacom-10	bylka-smacom-11	bylka-smacom-12";
 	gap:250px;
 	transform: translate(150px,-600px);
+	margin: 5% auto;
 }
 .test-6 {
 	grid-area: bylka-smacom-6;
