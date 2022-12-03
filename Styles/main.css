@@ -6,10 +6,11 @@
 	"bylka-smacom-2.		bylka-smacom-1"
 	"bylka-smacom-3	bylka-smacom-4	bylka-smacom-5";
 	gap:250px;
+	transform: translate(200px,0);
 }
 .test-7{
 	box-sizing:content-box;
-	width:1300px;
+	width:1400px;
 	padding:1em;
 	background-color:#ff8c00;
 	height:50px;
@@ -50,7 +51,7 @@
 	grid-template-areas:
 	"bylka-smacom-6	bylka-smacom-10	bylka-smacom-11	bylka-smacom-12";
 	gap:250px;
-	transform: translate(0,-600px);
+	transform: translate(150px,-600px);
 }
 .test-6 {
 	grid-area: bylka-smacom-6;
