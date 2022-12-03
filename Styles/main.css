@@ -10,7 +10,7 @@
 }
 .test-7{
 	box-sizing:content-box;
-	width:1400px;
+	width:auto;
 	padding:1em;
 	background-color:#ff8c00;
 	height:50px;
