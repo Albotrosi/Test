@@ -1,91 +1,29 @@
-.container-1{
-	display:grid;
-	grid-template-columns: 100px 50px 50px 50px 50px;
-	grid-template-rows:50px 50px 50px 50px 50px;
-	grid-template-areas:
-	"bylka-smacom-2.		bylka-smacom-1"
-	"bylka-smacom-3	bylka-smacom-4	bylka-smacom-5";
-	gap:250px;
-	transform: translate(200px,0);
-	margin: 5% auto;
+.box-1{
+	position:relative;
+	background-color:#74992e;
+	height:657px;
+	width:1100px;
 }
-.test-7{
-	box-sizing:content-box;
-	width:auto;
-	padding:1em;
-	background-color:#ff8c00;
+.box-2{
+	position:absolute;
+	background-color:#FF0000;
+	width:75px;
 	height:50px;
+	bottom:10px;
+	right:10px;
 }
-.test-8{
-	box-sizing:content-box;
-	width:600px;
-	padding:1em;
-	transform: translate(300px,10px);
-	background-color:#e6e6fa;
+@media screen and (max-width:900px){
+	.box-2{
+		width:100px;
+		height:640px;
+		bottom:0;
+		right:0;
+	}
 }
-.test-9{
-	box-sizing:content-box;
-	width:100px;
-	padding:1em;
-	background-color:#ff8c00;
-	transform: translate(800px,-40px);
-}
-.test-1 {
-	grid-area: bylka-smacom-1;
-}
-.test-2 {
-	grid-area: bylka-smacom-2;
-}
-.test-3{
-	grid-area: bylka-smacom-3;
-}
-.test-4	{
-	grid-area: bylka-smacom-4;
-}
-.test-5 {
-	grid-area: bylka-smacom-5;
-}
-.container-2{
-	display:grid;
-	grid-template-columns: 100px 50px 50px 50px 50px;
-	grid-template-rows:50px 50px 50px 50px 50px;
-	grid-template-areas:
-	"bylka-smacom-6	bylka-smacom-10	bylka-smacom-11	bylka-smacom-12";
-	gap:250px;
-	transform: translate(150px,-600px);
-	margin: 5% auto;
-}
-.test-6 {
-	grid-area: bylka-smacom-6;
-}
-.test-10 {
-	grid-area: bylka-smacom-10;
-}.test-11 {
-	grid-area: bylka-smacom-11;
-}.test-12 {
-	grid-area: bylka-smacom-12;
-}
-.text-1	{
-	transform: translate(500px,-700px);
-}
-.text-2	{
-	transform: translate(250px,150px);
-}
-.text-3	{
-	transform: translate(350px,130px);
-}
-.text-4	{
-	transform: translate(450px,110px);
-}
-.text-5	{
-	transform: translate(550px,95px);
-}
-.text-6	{
-	transform: translate(650px,75px);
-}
-.text-7	{
-	transform: translate(800px,60px);
-}
-.text-8	{
-	transform: translate(900px,45px);
+@media screen and (max-width:620px){
+	.box-2{
+		width:100%;
+		height:50px;
+		bottom:0;
+	}
 }
