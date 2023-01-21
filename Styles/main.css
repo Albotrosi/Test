@@ -1,3 +1,26 @@
-.test {
-    width: 150px;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.text {
+    font-size: 20px;
+    
+}
+.minus {
+    margin: 10px;
+    height: 30px;
+}
+.plus {
+    margin: 10px;
+    height: 40px;
+}
+.print {
+    margin: 20px;
+}
+.container-1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    transform: translate(-300px,40px);
 }
