@@ -1,15 +1,8 @@
-var counterVal = 0;
+let elCat = document.querySelector ('.test');
+console.log('elCat:',elCat);
+elCat.addEventListener('mouseenter',()=>{
+    //BEGIN!
+    console.log('mouseenter!!!');
+    document.write('<b>куку</b>')
+});
 
-function incrementClick() {
-    updateDisplay(++counterVal);
-}
-
-function resetCounter() {
-    counterVal = 0;
-    updateDisplay(counterVal);
-}
-
-function updateDisplay(val) {
-    document.getElementById("counter-label").innerHTML = val;
-    document.getElementById("print").innerHTML = val;
-}
