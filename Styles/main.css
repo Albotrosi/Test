@@ -1,3 +1,8 @@
-.test {
-    width: 110px;
+.fruits .apple-info,
+.fruits .orange-info{
+    display: none ;
+}
+.fruits.apple .apple-info,
+.fruits.orange .orange-info {
+    display: block;
 }
