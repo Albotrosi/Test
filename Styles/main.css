@@ -6,3 +6,6 @@
 .fruits.orange .orange-info {
     display: block;
 }
+.out{
+    text-transform: capitalize;
+}
