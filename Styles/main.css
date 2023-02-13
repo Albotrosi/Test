@@ -1,11 +1,29 @@
-.fruits .apple-info,
-.fruits .orange-info{
-    display: none ;
+.lights {
+  width: 50px;
+  margin-right: 10px;
+  float: left;
 }
-.fruits.apple .apple-info,
-.fruits.orange .orange-info {
-    display: block;
+
+.red {
+  background-color: #800000;
 }
-.out{
-    text-transform: capitalize;
+
+.red.active {
+  background-color: #FF0000;
+}
+
+.yellow {
+  background-color: #808000;
+}
+
+.yellow.active {
+  background-color: #FFFF00;
+}
+
+.green {
+  background-color: #008000;
+}
+
+.green.active {
+  background-color: #00FF00;
 }

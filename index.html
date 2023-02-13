@@ -8,29 +8,18 @@
 		<link rel="stylesheet" href="./Styles/main.css">
 	</head>
 	<body>
-		<div>оберіть ваш пол</div>
-		<form>
-			<select value="none">
-			  <option value="none">Ничего</option>
-			  <option value="apple">жінка</option>
-			  <option value="orange">Чоловік</option>
-			</select>
-		  </form>
-		  <div class="fruits">
-			<div class="apple-info">
-			  <h1>у жінок не можно питати вік</h1>
-			</div>
-			<div class="orange-info">
-				<div>введіть ваше ім'я</div>
-				<input type="text" class="i-1">
-				<button>клік</button>
-				<div> 
-					<div class="out"></div> 
-					укажіть ваш вік
-				</div>
-				<input type="text" class="i-2">
-			</div>
+		<div id="main" class="lights">
+			<div class="desc">Main</div>
+			<div class="red">&nbsp;</div>
+			<div class="yellow">&nbsp;</div>
+			<div class="green active">&nbsp;</div>
 		  </div>
+		  <div id="second" class="lights">
+			<div class="desc">Second</div>
+			<div class="red active">&nbsp;</div>
+			<div class="green">&nbsp;</div>
+		</div>
+		<button id="go">GO!</button>
 		<script src="./js/main.js"></script>
 	</body>
 </html>
