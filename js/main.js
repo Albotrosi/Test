@@ -16,11 +16,11 @@ function prepare(text) {
 
     return `<span style="color: ${ color }">${ word }</span>`;
   }
-}
+};
 function first(str) {
   return document.querySelector(str);
-}
-document.getElementById('reset').onclick = function() {
-  document.forms.my.reset();
-  location.reload();
-}
+};
+reset = document.querySelector(".reset");
+reset.addEventListener("click",function(){
+  document.location.reload();
+});
