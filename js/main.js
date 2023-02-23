@@ -1,25 +1,27 @@
-first("button").addEventListener("click", function() {
-  let val = first(".myInput").value.trim();
-  if (!val) return; // ничего не ввели? Прервать.
-  
-  first(".textOutput").insertAdjacentHTML("beforeEnd", prepare(val));
-  first(".myInput").value = '';
-});
+push = document.querySelector(".clickButton")
+push.addEventListener('click',function(){
+  let a = document.querySelector(".myInput").value;
+  document.querySelector(".textOutput").innerHTML += prepare(a);
+  document.querySelector(".myInput").value = '';
 
+}) 
 function prepare(text) {
-  return "<li>" + text.split(/\s+/).map(wrap_span).join(" ") + "</li>";
-  // в регулярном выражении, \s+ =один или много пробелов подряд
-  
-  /***/
-  function wrap_span(word) {    
-    let color = /[!@#$&*%]/.test(word) ? "red" : word.length > 3 ? "green" : "";
-
-    return `<span style="color: ${ color }">${ word }</span>`;
-  }
-};
-function first(str) {
-  return document.querySelector(str);
-};
+  return text
+    .split(' ')
+    .map(word => {
+      if (word.length === 0) {
+        return word;
+      }
+      let color = '';
+      if (word.length > 3) {
+        color = 'green';
+      }
+      if (word.match(/[!@#$&*%]/)) {
+        color = 'red';
+      }
+      return `<ul style="color: ${color}">${word}</ul>`;
+    }).join(' ');
+}
 reset = document.querySelector(".reset");
 reset.addEventListener("click",function(){
   document.location.reload();
