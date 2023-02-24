@@ -1,11 +1,11 @@
 push = document.querySelector(".clickButton")
+newtext = document.querySelector(".textOutput")
 push.addEventListener('click',function(){
   let a = document.querySelector(".myInput").value;
-  document.querySelector(".textOutput").innerHTML += prepare(a);
   document.querySelector(".myInput").value = '';
-
+  document.querySelector(".textOutput").innerHTML += prepare(a);
 }) 
-function prepare(text) {
+prepare = function (text){
   return text
     .split(' ')
     .map(word => {
@@ -21,7 +21,7 @@ function prepare(text) {
       }
       return `<ul style="color: ${color}">${word}</ul>`;
     }).join(' ');
-}
+};
 reset = document.querySelector(".reset");
 reset.addEventListener("click",function(){
   document.location.reload();
