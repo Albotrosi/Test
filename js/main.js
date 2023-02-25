@@ -1,5 +1,5 @@
-push = document.querySelector(".clickButton")
-newtext = document.querySelector(".textOutput")
+let push = document.querySelector(".clickButton")
+let newtext = document.querySelector(".textOutput")
 push.addEventListener('click',function(){
   let a = document.querySelector(".myInput").value;
   document.querySelector(".myInput").value = '';
@@ -22,7 +22,7 @@ prepare = function (text){
       return `<ul style="color: ${color}">${word}</ul>`;
     }).join(' ');
 };
-reset = document.querySelector(".reset");
+let reset = document.querySelector(".reset");
 reset.addEventListener("click",function(){
   document.location.reload();
 });
