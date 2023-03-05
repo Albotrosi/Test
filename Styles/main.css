@@ -1,25 +1,9 @@
-body{
-  padding:0;
-  margin: 0;
+.container {
+  display: table;
 }
-img{
-  width:300px;
+.textOutput {
+  display: table-cell;
 }
-#backPop{
-  display:none;
-  width: 100%;
-    min-height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    overflow: hidden;
-    position: fixed;
-    top: 0px;
-    z-index: 100;
-}
-#popUp{
-  position: relative;
-  width:60%;
-  margin:7% auto;
-}
-#bigImg{
-  width:100%;
+.textOutput-3 {
+  display: table-cell;
 }
