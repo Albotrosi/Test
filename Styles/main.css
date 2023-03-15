@@ -1,27 +1,16 @@
-body {
-  margin: 0;
-}
-body *{
-  box-sizing: border-box;
-  cursor: url('https://www.bing.com/images/search?view=detailV2&ccid=AypP1ZIq&id=BF15FC15FBCEBEADC93D89A69E999D4C19494333&thid=OIP.AypP1ZIqxfaCJ9ViE33keQHaF7&mediaurl=https%3a%2f%2fi.pinimg.com%2f736x%2ffb%2ff5%2fe5%2ffbf5e5bce6e98ab6b9c30d0fa1afd9cd.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.032a4fd5922ac5f68227d562137de479%3frik%3dM0NJGUydmZ6miQ%26pid%3dImgRaw%26r%3d0&exph=588&expw=735&q=%d1%84%d0%be%d1%82%d0%be+%d1%82%d1%80%d0%be%d0%bb%d0%b8%d0%bd%d0%b3%d0%b0&simid=608028491977289240&FORM=IRPRST&ck=136BC27695DE06FDDD1C0185504CC2AC&selectedIndex=7'),pointer;
-}
-.board {
-  width: 100vw;
-  height: 100vh;
-  background-color: brown;
-}
-.btn {
+.block {
+  display: table;
+  transform: translate(200px,200px);
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transition: 0.09s;
-  width: 100px;
-  height: 50px;
-  font-size: 15px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  box-shadow: rgb(0, 0, 0.35) 0 5px 15px ;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+.ball-box {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.box {
+  display: table-cell;
 }
