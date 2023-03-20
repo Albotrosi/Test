@@ -1,10 +1,11 @@
 .block {
   display: table;
-  transform: translate(200px,200px);
   position: absolute;
   width: 20px;
   height: 20px;
   background-color: red;
+  left: 400px;
+  top: 10px;
 }
 .ball-box {
   position: relative;
@@ -13,4 +14,9 @@
 }
 .box {
   display: table-cell;
+}
+.cat-1 {
+  height: 40px;
+  width: 40px;
+  transform: translate(300px,0);
 }
