@@ -4,13 +4,21 @@ let downButton = document.querySelector('.text-3');
 let leftButton = document.querySelector('.text-4');
 let rightButton = document.querySelector('.top');
 let cat = document.querySelector(".cat");
-upButton.addEventListener('click', function(e){
+
+ball.addEventListener('click', function(e){
+  let target = e.target.closest ('.block')
+  let targetCoords = target.getBoundingClientRect();
+  let xCoord = e.clientX - targetCoords.left;
+  let yCoord = e.clientY - targetCoords.top;
+
+  if (xCoord === 0 && yCoord === 48){
   let goUp = ball.offsetTop;
-  ball.style.top = (parseInt(ball.style.top||0)+20)+"px";
+  ball.style.top = (parseInt(ball.style.top||0)-20)+"px";
   ball.style.left = (parseInt(ball.style.left||400)+20)+"px";
 
   let elementLeft = ball.offsetLeft;
   let elementTop = ball.offsetTop;
+  }
   if (elementLeft === 300 && elementTop === 300){
     alert("не чіпай кицю,вона едина тут схожа на звіра)")
   }
@@ -18,13 +26,19 @@ upButton.addEventListener('click', function(e){
     console.log('123')
   }
 });
-downButton.addEventListener('click', function(e){
- let goDown = ball.offsetTop;
+ball.addEventListener('click', function(e){
+  let target = e.target.closest ('.block')
+  let targetCoords = target.getBoundingClientRect();
+  let xCoord = e.clientX - targetCoords.left;
+  let yCoord = e.clientY - targetCoords.top;
+  if (xCoord === 48 && yCoord === 2){
+  let goDown = ball.offsetTop;
   ball.style.top = (parseInt(ball.style.top||0)+20)+"px";
   ball.style.left = (parseInt(ball.style.left||400)-20)+"px";
   
   let elementLeft = ball.offsetLeft;
   let elementTop = ball.offsetTop;
+  }
   if (elementLeft === 300 && elementTop === 300){
     alert("не чіпай кицю,вона едина тут схожа на звіра)")
   }
@@ -33,13 +47,22 @@ downButton.addEventListener('click', function(e){
   }
 
 });
-leftButton.addEventListener('click', function(e){
+document.addEventListener('click', function(e){
+
+  let target = e.target.closest ('.block')
+  let targetCoords = target.getBoundingClientRect();
+  let xCoord = e.clientX - targetCoords.left;
+  let yCoord = e.clientY - targetCoords.top;
+  console.log(xCoord,yCoord)
+  
+  if (xCoord === 4 && yCoord === 4){
   let goLeft = ball.offsetLeft;
   ball.style.left = (parseInt(ball.style.left||400)-20)+"px";
-  ball.style.top = (parseInt(ball.style.top||0)-20)+"px";
+  ball.style.top = (parseInt(ball.style.top||0)+20)+"px";
   
   let elementLeft = ball.offsetLeft;
   let elementTop = ball.offsetTop;
+  }
   if (elementLeft === 300 && elementTop === 300){
     alert("не чіпай кицю,вона едина тут схожа на звіра)")
   }
@@ -47,13 +70,19 @@ leftButton.addEventListener('click', function(e){
     console.log('123')
   }
 });
-rightButton.addEventListener('click', function(e){
+ball.addEventListener('click', function(e){
+  let target = e.target.closest ('.block')
+  let targetCoords = target.getBoundingClientRect();
+  let xCoord = e.clientX - targetCoords.left;
+  let yCoord = e.clientY - targetCoords.top;
+  if (xCoord === 48 && yCoord === 48) {
   let goRight = ball.offsetLeft;
-  ball.style.left = (parseInt(ball.style.left||400)+20)+"px";
+  ball.style.left = (parseInt(ball.style.left||400)-20)+"px";
   ball.style.top = (parseInt(ball.style.top||0)-20)+"px";
   
   let elementLeft = ball.offsetLeft;
   let elementTop = ball.offsetTop;
+  }
   if (elementLeft === 300 && elementTop === 300){
     alert("не чіпай кицю,вона едина тут схожа на звіра)")
   }
