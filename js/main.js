@@ -11,7 +11,7 @@ ball.addEventListener('click', function(e){
   let xCoord = e.clientX - targetCoords.left;
   let yCoord = e.clientY - targetCoords.top;
 
-  if (xCoord === 0 && yCoord === 48){
+  if (xCoord <8  && yCoord > 40){
   let goUp = ball.offsetTop;
   ball.style.top = (parseInt(ball.style.top||0)-20)+"px";
   ball.style.left = (parseInt(ball.style.left||400)+20)+"px";
@@ -31,7 +31,7 @@ ball.addEventListener('click', function(e){
   let targetCoords = target.getBoundingClientRect();
   let xCoord = e.clientX - targetCoords.left;
   let yCoord = e.clientY - targetCoords.top;
-  if (xCoord === 48 && yCoord === 2){
+  if (xCoord > 40 && yCoord < 8){
   let goDown = ball.offsetTop;
   ball.style.top = (parseInt(ball.style.top||0)+20)+"px";
   ball.style.left = (parseInt(ball.style.left||400)-20)+"px";
@@ -55,7 +55,7 @@ document.addEventListener('click', function(e){
   let yCoord = e.clientY - targetCoords.top;
   console.log(xCoord,yCoord)
   
-  if (xCoord === 4 && yCoord === 4){
+  if (xCoord <8 && yCoord < 8){
   let goLeft = ball.offsetLeft;
   ball.style.left = (parseInt(ball.style.left||400)-20)+"px";
   ball.style.top = (parseInt(ball.style.top||0)+20)+"px";
@@ -75,7 +75,7 @@ ball.addEventListener('click', function(e){
   let targetCoords = target.getBoundingClientRect();
   let xCoord = e.clientX - targetCoords.left;
   let yCoord = e.clientY - targetCoords.top;
-  if (xCoord === 48 && yCoord === 48) {
+  if (xCoord > 40 && yCoord > 40) {
   let goRight = ball.offsetLeft;
   ball.style.left = (parseInt(ball.style.left||400)-20)+"px";
   ball.style.top = (parseInt(ball.style.top||0)-20)+"px";
