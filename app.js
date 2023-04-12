@@ -1,10 +1,23 @@
-const fs = require ("fs");
+const http = require ('http');
 
-fs.appendFileSync("hello.txt","1");
+const server = http.createServer((req, res) => {
+    if(req.url === '/'){
+        res.end('HI');
+    }
+    else if(req.url === '/1'){
+        res.end('HELO');
+    }
+    else if(req.url === '/2'){
+        res.end('PRIVET');
+    }
+    else if(req.url === '/3'){
+        res.end('GUTEN TAG');
+    }
 
-fs.appendFile("hello.txt","2", function(error) {
-    if (error) throw error;
-    console.log ("запись файла завершена");
-    let data = fs.readFileSync("hello.txt","utf8");
-    console.log (data);
-})
+    else{
+        res.end('404');
+    }
+});
+
+server.listen(3000);
+console.log('RUN!!')
