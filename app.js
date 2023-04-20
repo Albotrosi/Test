@@ -1,12 +1,11 @@
 const express = require('express');
+const mainRoute= require('./routes/main')
 
-const app = express();
+const server = express();
 
-const FOLDER = `${process.cwd()}/public`;
-app.use(express.static(FOLDER));
+server.set('view engine','ejs');
+server.set('views',__dirname + '/views');
 
-const port = 3000;
-const hostname = 'localhost';
-app.listen(port, hostname, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+server.use('/',mainRoute)
+
+server.listen(3000)
