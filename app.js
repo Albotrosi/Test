@@ -1,11 +1,12 @@
-const express = require('express');
-const mainRoute= require('./routes/main')
+let fs = require('fs');
+fs.readFile('hello.txt', 'utf8', function(error, fileContent){
+   if(error) throw error; // ошибка чтения файла, если есть
+   console.log(fileContent); // содержимое файла
+   
+   let toWrite = fileContent + 'Тише, мыши, кот на крыше';
 
-const server = express();
-
-server.set('view engine','ejs');
-server.set('views',__dirname + '/views');
-
-server.use('/',mainRoute)
-
-server.listen(3000)
+   fs.writeFile('hello.txt', toWrite, function(error){
+      if(error) throw error; // ошибка чтения файла, если есть
+      console.log('Данные успешно записаны записать файл');
+   });
+})
