@@ -1,12 +1,9 @@
-let fs = require('fs');
-fs.readFile('hello.txt', 'utf8', function(error, fileContent){
-   if(error) throw error; // ошибка чтения файла, если есть
-   console.log(fileContent); // содержимое файла
-   
-   let toWrite = fileContent + 'Тише, мыши, кот на крыше';
+const express = require('express');
+const mainRoute= require('./routes/main');
+const server = express();
+const main = require('./public/js/main')
+server.set('view engine','ejs');
+server.set('views',__dirname + '/views');
 
-   fs.writeFile('hello.txt', toWrite, function(error){
-      if(error) throw error; // ошибка чтения файла, если есть
-      console.log('Данные успешно записаны записать файл');
-   });
-})
+server.use('/',mainRoute)
+server.listen(3000);
