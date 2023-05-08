@@ -3,8 +3,9 @@ const router = express.Router();
 
 router.get('/',(req,res) =>{
     res.render('page')
-});
 
+});
+  
 const studs = [
     { id: 1, name: 'viktoria', gender:'female', tags: ['magic voice']}
 ]
