@@ -7,14 +7,23 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 		<style>
-
+			.hidden {
+				display: none;
+			}
 		</style>
 	</head>
 	<body>
-		<input type="text" id="input-text">
-		<button id="submit-btn">Submit</button>
-		<div id="output-div"></div>
-		
+		<div id="color-filter">
+				<button data-color="red">Red</button>
+				<button data-color="blue">Blue</button>
+				<button data-color="green">Green</button>
+		</div>
+
+		<div class="item red">Red item</div>
+		<div class="item blue">Blue item</div>
+		<div class="item green">Green item</div>
+		<div class="item red">Another red item</div>
+
 		<script src="./js/main.js"></script>
 	</body>
 </html>

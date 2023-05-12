@@ -1,21 +1,15 @@
-const inputText = document.getElementById('input-text');
-const submitBtn = document.getElementById('submit-btn');
-const outputDiv = document.getElementById('output-div');
+var colorFilter = document.getElementById('color-filter');
+var items = document.querySelectorAll('.item');
 
-submitBtn.addEventListener('click', () => {
-  const text = inputText.value;
-  fetch('/123', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ text })
-  })
-  .then(response => response.text())
-  .then(data => {
-    outputDiv.textContent = data;
-  })
-  .catch(error => {
-    console.error(error);
-  });
+colorFilter.addEventListener('click', function(event) {
+  var color = event.target.getAttribute('data-color');
+  if (color) {
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].classList.contains(color)) {
+        items[i].classList.remove('hidden');
+      } else {
+        items[i].classList.add('hidden');
+      }
+    }
+  }
 });
