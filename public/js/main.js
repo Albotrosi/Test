@@ -1,8 +1,8 @@
-var colorFilter = document.getElementById('color-filter');
-var items = document.querySelectorAll('.item');
+let colorFilter = document.getElementById('color-filter');
+let items = document.querySelectorAll('.item');
 
 colorFilter.addEventListener('click', function(event) {
-  var color = event.target.getAttribute('data-color');
+  let color = event.target.getAttribute('data-color');
   if (color) {
     for (var i = 0; i < items.length; i++) {
       if (items[i].classList.contains(color)) {
