@@ -1,3 +1,4 @@
+
 const express = require('express');
 const mainRoute= require('./routes/main');
 const gitRoute = require('./routes/git')
@@ -10,23 +11,47 @@ const bodyParser = require('body-parser');
 
 server.use(bodyParser.json());
 
-server.get('/api/content', function(req, res) {
-    // Получаем параметры фильтрации из запроса
-    const category = req.query.category || '';
-    const minPrice = req.query.min_price || 0;
-    const maxPrice = req.query.max_price || Infinity;
-    const inStock = req.query.in_stock === 'true';
-  
-    // Выполняем фильтрацию контента и возвращаем результаты
-    const filteredContent = content.filter(function(item) {
-      return item.category.includes(category) &&
-             item.price >= minPrice &&
-             item.price <= maxPrice &&
-             (inStock ? item.in_stock : true);
-    });
-    res.send(filteredContent);
-  });
-  
+const mongoose = require ('mongoose')
+const connect = mongoose.connect('mongodb://127.0.0.1:27017/myapp');
 
-server.use('/',mainRoute)
-server.listen(3000)
+const {Schema} = mongoose
+    
+const schema = new Schema({
+  name: {type:String},
+  surname:{type:String},
+  birthday:{type:Date}
+})
+const UserModel = mongoose.model('users', schema); 
+
+
+
+const data = { 
+  name: 'Oleg',
+  surname:'olegov',
+  birthday: Date.now() 
+}
+
+UserModel.create(data)
+
+mongoose.connection.on('connected', () => {
+  console.log('MongoDB connected');
+});
+
+mongoose.connection.on('error', (err) => {
+  console.log(`MongoDB connection error: ${err}`);
+});
+
+server.get('/users', (req, res) => {
+  UserModel.find().then((data) => { 
+    res.send(data);
+  }).catch((err) => {
+    console.log(err);
+  });
+});
+
+server.use('/', mainRoute);
+server.use('/git', gitRoute);
+
+server.listen(3000, () => {
+    console.log('Server started on port 3000');
+});

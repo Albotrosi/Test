@@ -10,8 +10,47 @@
 		<script src="/public/js/main.js"></script>
 		<script src="/upload.php"></script>
     <body>
-        <div id="#content">
-            123
-        </div>
+
+		const express = require('express');
+		const mainRoute= require('./routes/main');
+		const gitRoute = require('./routes/git')
+		const server = express();
+		server.set('view engine','ejs');
+		server.set('views',__dirname + '/views');
+		server.use(express.static(__dirname +'/public'));
+		
+		const bodyParser = require('body-parser');
+		
+		server.use(bodyParser.json());
+		
+		const mongoose = require ('mongoose')
+		const connect = mongoose.connect('mongodb://127.0.0.1:27017/myapp');
+		
+		const {Schema} = mongoose
+		
+		const schema = new Schema({
+			name: {type:String},
+			surname:{type:String},
+			birthday:{type:Date}
+		})
+		
+		connect.then(() => {
+		  console.log('Connected to MongoDB');
+		});
+		
+		server.get('/users', (req, res) => {
+		  schema.find().then((data) => {
+			res.send(data);
+		  }).catch((err) => {
+			console.log(err);
+		  });
+		});
+		
+		server.use('/', mainRoute);
+		server.use('/git', gitRoute);
+		
+		server.listen(3000, () => {
+			console.log('Server started on port 3000');
+		});
     </body>
 </html>
