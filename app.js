@@ -14,41 +14,39 @@ server.use(bodyParser.json());
 const mongoose = require ('mongoose')
 const connect = mongoose.connect('mongodb://127.0.0.1:27017/myapp');
 
-const {Schema} = mongoose
-    
-const schema = new Schema({
-  name: {type:String},
-  surname:{type:String},
-  birthday:{type:Date}
-})
-const UserModel = mongoose.model('users', schema); 
+const Schema = mongoose.Schema;
 
 
+const bookSchema = new Schema({
+  title: String,
+  year: Number,
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'Author'
+  }
+});
 
-const data = { 
-  name: 'Oleg',
-  surname:'olegov',
-  birthday: Date.now() 
+
+const authorSchema = new Schema({
+  name: String,
+  age: Number,
+  books: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Book'
+  }]
+});
+
+const Book = mongoose.model('Book', bookSchema);
+const Author = mongoose.model('Author', authorSchema);
+
+
+const run = async () => {
+  const result = await Author
+  .findById ('648b3352d9b34f8e3d835f88')
+  .populate ('books')
+  console.log('result:',result)
 }
-
-UserModel.create(data)
-
-mongoose.connection.on('connected', () => {
-  console.log('MongoDB connected');
-});
-
-mongoose.connection.on('error', (err) => {
-  console.log(`MongoDB connection error: ${err}`);
-});
-
-server.get('/users', (req, res) => {
-  UserModel.find().then((data) => { 
-    res.send(data);
-  }).catch((err) => {
-    console.log(err);
-  });
-});
-
+run ();
 server.use('/', mainRoute);
 server.use('/git', gitRoute);
 
