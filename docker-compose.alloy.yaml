@@ -1,0 +1,17 @@
+services:
+  mongo:
+    image: mongo:7
+    network_mode: host
+    command: ["mongod", "--bind_ip", "127.0.0.1", "--port", "27017"]
+
+  app:
+    image: node:22-bookworm
+    working_dir: /workspace
+    network_mode: host
+    volumes:
+      - .:/workspace
+    environment:
+      IS_ALLOY: ${IS_ALLOY:-false}
+    depends_on:
+      - mongo
+    command: bash -lc "npm install && npx --yes nodemon ./app.js"
